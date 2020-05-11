@@ -1,5 +1,7 @@
 import React from "react";
 
+import Button from "../Button";
+
 function Sort() {
   return (
     <>
@@ -13,9 +15,7 @@ function Sort() {
             <option value="Relevance">Relevance</option>
             <option value="Date">Date</option>
           </select>
-          <button type="submit" className="btn btn-sm btn-primary ml-1">
-            Sort
-          </button>
+          <Button text="Sort" />
         </div>
       </form>
     </>
