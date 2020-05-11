@@ -1,5 +1,7 @@
 import React from "react";
 
+import Searchbar from "../Searchbar";
+
 function Search() {
   return (
     <div className="searchHeader bg-primary rounded p-3 mb-3">
@@ -9,6 +11,7 @@ function Search() {
           <i className="fas fa-chevron-up"></i>
         </h4>
       </div>
+      <Searchbar />
     </div>
   );
 }
