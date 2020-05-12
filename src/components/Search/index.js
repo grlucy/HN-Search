@@ -14,9 +14,11 @@ function Search() {
       </div>
       <Searchbar />
       <p className="font-weight-bold text-white my-3">Previous Search Terms:</p>
-      <SearchTerm />
-      <SearchTerm />
-      <SearchTerm />
+      <div style={{ maxHeight: "192px", overflow: "auto" }}>
+        <SearchTerm />
+        <SearchTerm />
+        <SearchTerm />
+      </div>
     </div>
   );
 }

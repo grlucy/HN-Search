@@ -8,7 +8,7 @@ function SearchTerm() {
       </div>
       <div className="rounded-right bg-light p-2">
         <p>
-          <i class="fas fa-times"></i>
+          <i className="fas fa-times"></i>
         </p>
       </div>
     </div>
