@@ -1,11 +1,9 @@
 const sortTypeReducer = (state = "Relevance", action) => {
   switch (action.type) {
     case "Date":
-      state = "Date";
-      return state;
+      return "Date";
     case "Relevance":
-      state = "Relevance";
-      return state;
+      return "Relevance";
     default:
       return state;
   }
