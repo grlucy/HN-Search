@@ -1,8 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
-import Button from "../Button";
+import { sortTypeAction } from "../../actions";
 
 function Sort() {
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    let sort = e.target.value;
+    dispatch(sortTypeAction(sort));
+  };
+
   return (
     <form>
       <div className="d-sm-flex align-items-center">
@@ -13,11 +21,11 @@ function Sort() {
           <select
             className="form-control form-control-sm mr-1"
             style={{ maxWidth: "150px" }}
+            onChange={handleChange}
           >
             <option value="Relevance">Relevance</option>
             <option value="Date">Date</option>
           </select>
-          <Button text="Sort" />
         </div>
       </div>
     </form>

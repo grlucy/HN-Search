@@ -3,3 +3,9 @@ export const viewSearchAction = () => {
     type: "CLICK_SEARCH",
   };
 };
+
+export const sortTypeAction = (type) => {
+  return {
+    type: type,
+  };
+};
