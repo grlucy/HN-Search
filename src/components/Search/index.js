@@ -1,6 +1,7 @@
 import React from "react";
 
 import Searchbar from "../Searchbar";
+import SearchTerm from "../SearchTerm";
 
 function Search() {
   return (
@@ -12,6 +13,10 @@ function Search() {
         </h4>
       </div>
       <Searchbar />
+      <p className="font-weight-bold text-white my-3">Previous Search Terms:</p>
+      <SearchTerm />
+      <SearchTerm />
+      <SearchTerm />
     </div>
   );
 }
