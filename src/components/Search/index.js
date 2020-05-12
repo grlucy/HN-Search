@@ -7,6 +7,7 @@ import { viewSearchAction } from "../../actions";
 
 function Search() {
   const viewSearch = useSelector((state) => state.viewSearch);
+  const searchHistory = useSelector((state) => state.searchHistory);
   const dispatch = useDispatch();
 
   return (
@@ -22,16 +23,16 @@ function Search() {
           ></i>
         </h4>
       </div>
-      {viewSearch && (
+      {viewSearch && <Searchbar />}
+      {viewSearch && searchHistory[0] && (
         <>
-          <Searchbar />
           <p className="font-weight-bold text-white my-3">
             Previous Search Terms:
           </p>
           <div style={{ maxHeight: "192px", overflow: "auto" }}>
-            <SearchTerm />
-            <SearchTerm />
-            <SearchTerm />
+            {searchHistory.map((item, index) => (
+              <SearchTerm term={item} index={index} key={index} />
+            ))}
           </div>
         </>
       )}
