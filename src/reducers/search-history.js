@@ -1,8 +1,9 @@
 const searchHistoryReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD_HISTORY":
-      state.unshift(action.payload);
-      return state;
+      let newArr = state.slice();
+      newArr.unshift(action.payload);
+      return newArr;
     default:
       return state;
   }

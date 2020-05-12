@@ -9,7 +9,7 @@ function Searchbar() {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    dispatch(searchTermAction(e.target.value.trim()));
+    dispatch(searchTermAction(e.target.value));
   };
 
   const handleSubmit = (e) => {
