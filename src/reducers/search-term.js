@@ -1,4 +1,4 @@
-const searchTermReducer = (state = "Redux", action) => {
+const searchTermReducer = (state = "", action) => {
   switch (action.type) {
     case "SEARCH":
       state = action.payload;

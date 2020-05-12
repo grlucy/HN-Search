@@ -1,21 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import Button from "../Button";
-import { searchAction } from "../../actions";
+import { searchTermAction, addHistoryAction } from "../../actions";
 
 function Searchbar() {
+  const term = useSelector((state) => state.searchTerm);
   const dispatch = useDispatch();
 
-  let term = "Redux";
-
   const handleChange = (e) => {
-    term = e.target.value.trim();
+    dispatch(searchTermAction(e.target.value.trim()));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(searchAction(term));
+    dispatch(addHistoryAction(term));
+    dispatch(searchTermAction(""));
   };
 
   return (
@@ -25,6 +25,7 @@ function Searchbar() {
           className="form-control form-control-sm mb-1"
           placeholder="Search term"
           onChange={handleChange}
+          value={term}
         />
         <Button text="Search" />
       </form>

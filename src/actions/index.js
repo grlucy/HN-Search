@@ -10,9 +10,16 @@ export const sortTypeAction = (type) => {
   };
 };
 
-export const searchAction = (term) => {
+export const searchTermAction = (term) => {
   return {
     type: "SEARCH",
+    payload: term,
+  };
+};
+
+export const addHistoryAction = (term) => {
+  return {
+    type: "ADD_HISTORY",
     payload: term,
   };
 };
