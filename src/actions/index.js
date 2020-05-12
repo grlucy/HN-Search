@@ -9,3 +9,10 @@ export const sortTypeAction = (type) => {
     type: type,
   };
 };
+
+export const searchAction = (term) => {
+  return {
+    type: "SEARCH",
+    payload: term,
+  };
+};
