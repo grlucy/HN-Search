@@ -23,3 +23,10 @@ export const addHistoryAction = (term) => {
     payload: term,
   };
 };
+
+export const deleteHistoryAction = (index) => {
+  return {
+    type: "DELETE_HISTORY",
+    payload: index,
+  };
+};

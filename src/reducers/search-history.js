@@ -4,6 +4,10 @@ const searchHistoryReducer = (state = [], action) => {
       let newArr = state.slice();
       newArr.unshift(action.payload);
       return newArr;
+    case "DELETE_HISTORY":
+      let deleteArr = state.slice();
+      deleteArr.splice(action.payload, 1);
+      return deleteArr;
     default:
       return state;
   }
