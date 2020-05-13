@@ -23,3 +23,10 @@ export const addHistoryAction = (term) => {
     payload: term,
   };
 };
+
+export const resultsAction = (array) => {
+  return {
+    type: "OVERWRITE_RESULTS",
+    payload: array,
+  };
+};
