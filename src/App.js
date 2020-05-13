@@ -4,7 +4,7 @@ import React from "react";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Sort from "./components/Sort";
-import Result from "./components/Result";
+import Results from "./components/Results";
 import Footer from "./components/Footer";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
               </div>
               <div className="col-sm-8">
                 <Sort />
-                <Result />
+                <Results />
               </div>
             </div>
           </div>
