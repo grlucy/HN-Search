@@ -30,3 +30,10 @@ export const deleteHistoryAction = (index) => {
     payload: index,
   };
 };
+
+export const resultsAction = (array) => {
+  return {
+    type: "OVERWRITE_RESULTS",
+    payload: array,
+  };
+};

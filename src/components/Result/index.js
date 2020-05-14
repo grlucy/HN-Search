@@ -1,21 +1,22 @@
 import React from "react";
+import moment from "moment";
 
-function Result() {
+function Result(props) {
   return (
     <>
       <hr />
-      <h2>Title</h2>
-      <p>Author</p>
+      <h3>{props.title || props.storyTitle}</h3>
+      <p>{props.author}</p>
       <p>
-        <i>created_at</i>
+        <i>{moment(props.created).format("MM-DD-YYYY")}</i>
       </p>
       <p>
         <a
-          href="http://www.google.com"
+          href={props.url || props.storyURL}
           target="_blank"
           rel="noopener noreferrer"
         >
-          url
+          {props.url || (props.storyURL && <span>View story</span>)}
         </a>
       </p>
     </>
