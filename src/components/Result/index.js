@@ -16,7 +16,7 @@ function Result(props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {props.url || (props.storyURL && <span>View story</span>)}
+          {(props.url || props.storyURL) && <span>View story</span>}
         </a>
       </p>
     </>
