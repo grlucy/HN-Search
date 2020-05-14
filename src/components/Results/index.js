@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import API from "../../utils/API";
@@ -29,25 +29,35 @@ function Results() {
     };
   }
 
-  switch (sortType) {
-    case "Date":
-      dispatch(searchTermByDate(currentTerm));
-      break;
-    default:
-      dispatch(searchTermByRelevance(currentTerm));
-  }
+  useEffect(() => {
+    switch (sortType) {
+      case "Date":
+        dispatch(searchTermByDate(currentTerm));
+        break;
+      default:
+        dispatch(searchTermByRelevance(currentTerm));
+    }
+  }, [sortType, currentTerm, dispatch]);
 
   return (
     <>
       {currentResults.map((result) => (
         <Result
           title={result.title}
+          storyTitle={result.story_title}
           author={result.author}
           created={result.created_at}
           url={result.url}
+          storyURL={result.story_url}
           key={result.objectID}
         />
       ))}
+      {currentResults.length === 0 && (
+        <>
+          <hr />
+          <p>No results found for "{currentTerm}"</p>
+        </>
+      )}
     </>
   );
 }
