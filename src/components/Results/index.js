@@ -17,7 +17,7 @@ function Results() {
     return function (dispatch) {
       return API.searchByRelevance(term)
         .then((res) => dispatch(resultsAction(res.data.hits)))
-        .catch((err) => console.log("hey there", err));
+        .catch((err) => console.log(err));
     };
   }
 
