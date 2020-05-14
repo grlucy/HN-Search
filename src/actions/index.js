@@ -24,6 +24,13 @@ export const addHistoryAction = (term) => {
   };
 };
 
+export const deleteHistoryAction = (index) => {
+  return {
+    type: "DELETE_HISTORY",
+    payload: index,
+  };
+};
+
 export const resultsAction = (array) => {
   return {
     type: "OVERWRITE_RESULTS",

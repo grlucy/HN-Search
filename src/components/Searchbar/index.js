@@ -14,8 +14,10 @@ function Searchbar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addHistoryAction(term));
-    dispatch(searchTermAction(""));
+    if (term.trim() !== "") {
+      dispatch(addHistoryAction(term));
+      dispatch(searchTermAction(""));
+    }
   };
 
   return (
